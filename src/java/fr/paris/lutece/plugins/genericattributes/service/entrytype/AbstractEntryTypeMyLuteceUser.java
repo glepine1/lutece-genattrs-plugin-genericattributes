@@ -41,6 +41,7 @@ import javax.servlet.http.HttpServletRequest;
 import fr.paris.lutece.plugins.genericattributes.business.Entry;
 import fr.paris.lutece.plugins.genericattributes.business.GenericAttributeError;
 import fr.paris.lutece.plugins.genericattributes.business.Response;
+import fr.paris.lutece.plugins.genericattributes.util.GenericAttributesUtils;
 import fr.paris.lutece.portal.service.i18n.I18nService;
 import fr.paris.lutece.portal.service.plugin.Plugin;
 import fr.paris.lutece.portal.service.security.LuteceUser;
@@ -83,6 +84,7 @@ public abstract class AbstractEntryTypeMyLuteceUser extends EntryTypeService
     {
         initCommonRequestData( entry, request );
         String strIndexed = request.getParameter( PARAMETER_INDEXED );
+        String strEditable = request.getParameter( PARAMETER_EDITABLE );
 
         entry.setTitle( I18nService.getLocalizedString( PROPERTY_ENTRY_TITLE, locale ) );
 
@@ -92,6 +94,7 @@ public abstract class AbstractEntryTypeMyLuteceUser extends EntryTypeService
         entry.setIndexed( strIndexed != null );
 
         entry.setCode( strCode );
+        GenericAttributesUtils.createOrUpdateField( entry, FIELD_EDITABLE, null, strEditable );
         return null;
     }
 

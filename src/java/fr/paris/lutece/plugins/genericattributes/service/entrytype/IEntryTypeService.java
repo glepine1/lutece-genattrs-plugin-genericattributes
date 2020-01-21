@@ -83,6 +83,7 @@ public interface IEntryTypeService
     String PARAMETER_USED_CORRECT_RESPONSE = "used_in_correct_form_response";
     String PARAMETER_USED_COMPLETE_RESPONSE = "used_in_complete_form_response";
     String PARAMETER_EXPORTABLE = "exportable";
+    String PARAMETER_EDITABLE = "editable";
 
     // Fields codes
     String FIELD_DATE_VALUE = "default_date_value";
@@ -115,6 +116,7 @@ public interface IEntryTypeService
     String FIELD_MAX_SIZE = "max_size";
     String FIELD_TEXT_CONF = "text_config";
     String FIELD_EXPORTABLE = "exportable";
+    String FIELD_EDITABLE = "editable";
 
     // attribute
     String ATTRIBUTE_RESPONSE_ITERATION_NUMBER = "response_iteration_number";
